@@ -109,6 +109,7 @@ class UsersController extends UsersAppController {
  */
 	protected function _setupAuth() {
 		$this->Auth->allow('add', 'reset', 'verify', 'logout', 'view', 'reset_password', 'login','test');
+		$this->Auth->allow('logout', 'view', 'login');
 		$this->Security->blackHoleCallback = 'forceSSL';
 		$this->Security->requireSecure();
 		if (!is_null(Configure::read('Users.allowRegistration')) && !Configure::read('Users.allowRegistration')) {
